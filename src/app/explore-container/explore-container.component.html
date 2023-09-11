@@ -1,4 +1,22 @@
-<div id="container">
-  <strong>{{ name }}</strong>
-  <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-</div>
+      <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+
+        <ion-row>
+          <ion-item class="emailCont" lines="none">
+            <ion-label position="floating">Enter your email address</ion-label>
+            <ion-input type="email" ngModel name="email" clearInput></ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-item class="passwordCont" lines="none">
+            <ion-label position="floating">Now enter your password</ion-label>
+            <ion-input type="password" ngModel name="password"></ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-button class="submitButton" color="secondary" type="submit" [disabled]="!isValid(loginForm)">
+            Sign In
+          </ion-button>
+        </ion-row>
+      </form>
